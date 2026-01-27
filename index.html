@@ -224,16 +224,22 @@
       gap:10px;
     }
     .pin{
-      border:1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(255,255,255,.02);
-      overflow:hidden;
-      position:relative;
-      aspect-ratio: 2 / 3;
-      display:flex;
-      align-items:flex-end;
-      justify-content:flex-start;
-    }
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:#0b0d12;
+  overflow:hidden;
+  aspect-ratio: 2 / 3; /* Pinterest native ratio */
+  display:block;
+}
+
+.pin img{
+  width:100%;
+  height:100%;
+  object-fit: contain; /* NEVER crop */
+  display:block;
+  background:#0b0d12;
+}
+
     .pin span{
       width:100%;
       padding:10px;
@@ -478,7 +484,14 @@
         </div>
 
         <div class="pins">
-          <a class="pin" href="https://www.redbubble.com/i/t-shirt/This-match-is-between-me-and-God-Gamer-shirt-for-competitive-players-by-TiltedPlayer/177826677.6VDG0?asc=u" target="_blank" rel="noopener"><span>This Match Is Between Me and God</span></a>
+          <a class="pin" href="https://www.redbubble.com/i/t-shirt/This-match-is-between-me-and-God-Gamer-shirt-for-competitive-players-by-TiltedPlayer/177826677.6VDG0?asc=u" target="_blank" rel="noopener">
+  <img
+    src="https://ih1.redbubble.net/image.6060653229.6677/ssrco,premium_tee,flatlay,101010:01c5ca27c6,front,wide_portrait,x1000.1.jpg"
+    alt="This Match Is Between Me and God gamer shirt"
+    loading="lazy"
+  />
+</a>
+
           <a class="pin" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener"><span>Rage Quit Is My Cardio</span></a>
           <a class="pin" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener"><span>Insert Coin, Lose Sanity</span></a>
           <a class="pin" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener"><span>Old School Still OP</span></a>
