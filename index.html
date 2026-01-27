@@ -1,26 +1,484 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="p:domain_verify" content="<meta name="p:domain_verify" content="7f5c7a562ecb669c63d40a16d7ec42f7"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Competitive Gamer Shirts</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tilted Player – Gamer Shirts</title>
+  <meta name="description" content="Gamer shirts for people who’ve been there: rage quits, lock-in moments, and old school instincts. Shop the designs on Redbubble." />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Tilted Player – Gamer Shirts" />
+  <meta property="og:description" content="Rage quits. Lock-in moments. Old school instincts. Shop the designs." />
+  <meta property="og:type" content="website" />
+  <!-- Optional: add a social share image later -->
+  <!-- <meta property="og:image" content="https://your-domain/og-image.jpg" /> -->
+
+  <style>
+    :root{
+      --bg:#0b0d12;
+      --card:#111522;
+      --muted:#b9c0d4;
+      --text:#eef2ff;
+      --line:rgba(255,255,255,.08);
+      --accent:#7c5cff;
+      --accent2:#2dd4bf;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(124,92,255,.25), transparent 60%),
+        radial-gradient(900px 500px at 80% 30%, rgba(45,212,191,.18), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
+
+    /* Top bar */
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+      padding:10px 0 18px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+    }
+    .logo{
+      width:40px; height:40px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(45,212,191,.85));
+      box-shadow: var(--shadow);
+    }
+    .brand h2{margin:0; font-size:16px; letter-spacing:.2px}
+    .brand p{margin:2px 0 0; color:var(--muted); font-size:12px}
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+      background: rgba(255,255,255,.03);
+    }
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      align-items:stretch;
+      padding:22px 0 10px;
+    }
+    .heroCard{
+      border:1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      padding:26px;
+      position:relative;
+      overflow:hidden;
+    }
+    .heroCard:before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(600px 200px at 20% 0%, rgba(124,92,255,.22), transparent 60%),
+                  radial-gradient(600px 200px at 80% 10%, rgba(45,212,191,.16), transparent 55%);
+      pointer-events:none;
+    }
+    .heroCard > *{position:relative}
+
+    h1{margin:0 0 10px; font-size:42px; line-height:1.05; letter-spacing:-.6px}
+    .sub{margin:0 0 18px; color:var(--muted); font-size:16px; max-width:54ch}
+
+    .btnRow{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 14px;
+      border-radius: 14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:600;
+      font-size:14px;
+      transition: transform .08s ease, border-color .12s ease, background .12s ease;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); border-color: rgba(255,255,255,.16); background: rgba(255,255,255,.05)}
+    .btn.primary{
+      border-color: rgba(124,92,255,.55);
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(124,92,255,.55));
+    }
+    .btn.primary:hover{border-color: rgba(124,92,255,.8)}
+
+    .heroSide{
+      border:1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      background: rgba(255,255,255,.03);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .stat{
+      border:1px solid var(--line);
+      background: rgba(0,0,0,.12);
+      border-radius: 16px;
+      padding:14px;
+    }
+    .stat b{display:block; font-size:13px; margin-bottom:4px}
+    .stat span{color:var(--muted); font-size:13px}
+
+    /* Sections */
+    section{padding:22px 0 0}
+    .sectionTitle{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+    }
+    .sectionTitle h3{margin:0; font-size:18px}
+    .sectionTitle p{margin:0; color:var(--muted); font-size:13px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap:12px;
+    }
+    .card{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 210px;
+    }
+    .card .img{
+      height:160px;
+      background:
+        linear-gradient(135deg, rgba(124,92,255,.14), rgba(45,212,191,.12));
+      border-bottom:1px solid var(--line);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: rgba(255,255,255,.7);
+      font-size:12px;
+    }
+    .card .body{padding:14px; display:flex; flex-direction:column; gap:10px; flex:1}
+    .card h4{margin:0; font-size:15px; letter-spacing:-.2px}
+    .card p{margin:0; color:var(--muted); font-size:13px}
+    .card .actions{margin-top:auto; display:flex; gap:10px; flex-wrap:wrap}
+
+    /* Vibes */
+    .vibes{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:12px;
+    }
+    .vibe{
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.03);
+      padding:14px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .dot{
+      width:12px; height:12px; border-radius: 999px;
+      background: var(--accent);
+      margin-top:4px;
+      box-shadow: 0 0 0 6px rgba(124,92,255,.12);
+      flex: 0 0 auto;
+    }
+    .dot.alt{background: var(--accent2); box-shadow: 0 0 0 6px rgba(45,212,191,.12)}
+    .vibe h4{margin:0 0 4px; font-size:14px}
+    .vibe p{margin:0 0 10px; color:var(--muted); font-size:13px}
+
+    /* About */
+    .about{
+      border:1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      background: rgba(255,255,255,.03);
+      padding:18px;
+    }
+    .about p{margin:0; color:var(--muted); font-size:14px; max-width:85ch}
+
+    /* Pinterest grid */
+    .pins{
+      display:grid;
+      grid-template-columns: repeat(6, minmax(0,1fr));
+      gap:10px;
+    }
+    .pin{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.02);
+      overflow:hidden;
+      position:relative;
+      aspect-ratio: 2 / 3;
+      display:flex;
+      align-items:flex-end;
+      justify-content:flex-start;
+    }
+    .pin span{
+      width:100%;
+      padding:10px;
+      font-size:12px;
+      color: rgba(255,255,255,.85);
+      background: linear-gradient(180deg, transparent, rgba(0,0,0,.55));
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+
+    /* Footer */
+    footer{
+      margin-top:30px;
+      border-top:1px solid var(--line);
+      padding-top:18px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .links{display:flex; gap:10px; flex-wrap:wrap}
+    .links a{border:1px solid var(--line); padding:10px 12px; border-radius:999px; background: rgba(255,255,255,.02)}
+    .links a:hover{border-color: rgba(255,255,255,.16)}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero{grid-template-columns: 1fr;}
+      h1{font-size:36px}
+      .grid{grid-template-columns: 1fr;}
+      .vibes{grid-template-columns: 1fr;}
+      .pins{grid-template-columns: repeat(3, minmax(0,1fr));}
+    }
+    @media (max-width: 420px){
+      h1{font-size:32px}
+      .pins{grid-template-columns: repeat(2, minmax(0,1fr));}
+    }
+  </style>
+  <!-- Pinterest Tag -->
+  <!-- Replace 7f5c7a562ecb669c63d40a16d7ec42f7 with your actual tag ID -->
+  <script>
+    !function(e){if(!window.pintrk){window.pintrk=function(){window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+    n=window.pintrk;n.queue=[],n.version="3.0";var
+    t=document.createElement("script");t.async=!0,t.src=e;var
+    r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+    pintrk('load', '7f5c7a562ecb669c63d40a16d7ec42f7');
+    pintrk('page');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none;" alt=""
+         src="https://ct.pinterest.com/v3/?event=pagevisit&tid=7f5c7a562ecb669c63d40a16d7ec42f7&noscript=1" />
+  </noscript>
+  <!-- End Pinterest Tag -->
+
 </head>
-<body style="background:#111;color:#f5f5f5;font-family:Arial,Helvetica,sans-serif;text-align:center;padding:60px;">
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h2>Tilted Player</h2>
+          <p>Funny gamer shirts • POD on Redbubble</p>
+        </div>
+      </div>
+      <div class="pill" title="Tip: Edit the links in the HTML">
+        <span aria-hidden="true">🔗</span>
+        <span>Link hub for Pinterest / TikTok</span>
+      </div>
+    </header>
 
-  <h1 style="font-size:36px;margin-bottom:20px;">
-    Competitive Gamer Shirts
-  </h1>
+    <main>
+      <!-- HERO -->
+      <div class="hero" id="top">
+        <div class="heroCard">
+          <h1>Gamer shirts for people who’ve been there</h1>
+          <p class="sub">Rage quits. Lock-in moments. Old school instincts. Some matches are bigger than the rank.</p>
+          <div class="btnRow">
+            <a class="btn primary" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener">Shop the designs →</a>
+            <a class="btn" href="#featured">Featured picks</a>
+            <a class="btn" href="#vibes">Shop by vibe</a>
+          </div>
+        </div>
 
-  <p style="font-size:18px;max-width:600px;margin:0 auto 40px;">
-    Gaming isn’t always chill. Sometimes it’s tilt, rage, and matches that feel way too personal.
-    Clean, modern gamer shirts for competitive players — from tilt culture to retro classics.
-  </p>
+        <aside class="heroSide">
+          <div class="stat">
+            <b>Best for:</b>
+            <span>Pinterest click-through • TikTok bio link • IG reels</span>
+          </div>
+          <div class="stat">
+            <b>Vibe:</b>
+            <span>Relatable gamer energy — no grindset lectures</span>
+          </div>
+          <div class="stat">
+            <b>Fulfilment:</b>
+            <span>Printed & shipped by Redbubble</span>
+          </div>
+        </aside>
+      </div>
 
-  <a href="https://www.redbubble.com/people/tiltedplayer"
-     style="display:inline-block;padding:15px 30px;background:#f5f5f5;color:#111;text-decoration:none;font-weight:bold;border-radius:4px;">
-     Shop on Redbubble
-  </a>
+      <!-- FEATURED -->
+      <section id="featured">
+        <div class="sectionTitle">
+          <div>
+            <h3>Featured designs</h3>
+            <p>Quick picks that match your pins.</p>
+          </div>
+          <a class="pill" href="#pins">Jump to pin grid ↓</a>
+        </div>
 
+        <div class="grid">
+          <article class="card">
+            <div class="img">Add product image</div>
+            <div class="body">
+              <h4>This Match Is Between Me and God</h4>
+              <p>For games where skill, luck, and faith are all tested at once.</p>
+              <div class="actions">
+                <!-- TODO: Replace with direct Redbubble product link -->
+                <a class="btn primary" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener">View on Redbubble</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="img">Add product image</div>
+            <div class="body">
+              <h4>Rage Quit Is My Cardio</h4>
+              <p>For players who swear they’re done… then queue again five minutes later.</p>
+              <div class="actions">
+                <!-- TODO: Replace with direct Redbubble product link -->
+                <a class="btn primary" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener">View on Redbubble</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="img">Add product image</div>
+            <div class="body">
+              <h4>Insert Coin, Lose Sanity</h4>
+              <p>Classic energy for gamers who’ve been doing this way too long.</p>
+              <div class="actions">
+                <!-- TODO: Replace with direct Redbubble product link -->
+                <a class="btn primary" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener">View on Redbubble</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- VIBES -->
+      <section id="vibes">
+        <div class="sectionTitle">
+          <div>
+            <h3>Shop by vibe</h3>
+            <p>Send people to the right mood fast.</p>
+          </div>
+        </div>
+
+        <div class="vibes">
+          <div class="vibe">
+            <div class="dot" aria-hidden="true"></div>
+            <div>
+              <h4>Rage & Ranked</h4>
+              <p>Tilted queues, salty runbacks, and “last game” lies.</p>
+              <!-- TODO: Replace with Redbubble collection link (or shop search link) -->
+              <a class="btn" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener">Shop Rage & Ranked</a>
+            </div>
+          </div>
+
+          <div class="vibe">
+            <div class="dot alt" aria-hidden="true"></div>
+            <div>
+              <h4>Casual / For Fun</h4>
+              <p>For when you’re here for the vibes, not the leaderboard.</p>
+              <!-- TODO: Replace with Redbubble collection link -->
+              <a class="btn" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener">Shop Casual Designs</a>
+            </div>
+          </div>
+
+          <div class="vibe">
+            <div class="dot" aria-hidden="true"></div>
+            <div>
+              <h4>Retro / Old School</h4>
+              <p>Experience beats meta. Fundamentals never die.</p>
+              <!-- TODO: Replace with Redbubble collection link -->
+              <a class="btn" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener">Shop Retro Styles</a>
+            </div>
+          </div>
+
+          <div class="vibe">
+            <div class="dot alt" aria-hidden="true"></div>
+            <div>
+              <h4>Lock-In / Mindset</h4>
+              <p>Mouse. Keyboard. Dominate (at least mentally).</p>
+              <!-- TODO: Replace with Redbubble collection link -->
+              <a class="btn" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener">Shop Lock-In Shirts</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY -->
+      <section id="why">
+        <div class="sectionTitle">
+          <div>
+            <h3>Why this exists</h3>
+            <p>Short, honest, and not cringe.</p>
+          </div>
+        </div>
+        <div class="about">
+          <p>These designs are for gamers who’ve felt it — ranked stress, late-night queues, and the quiet confidence that skill doesn’t disappear just because the meta changes. No guides. No grindset lectures. Just relatable gamer energy.</p>
+        </div>
+      </section>
+
+      <!-- PIN GRID -->
+      <section id="pins">
+        <div class="sectionTitle">
+          <div>
+            <h3>Pinterest grid</h3>
+            <p>Optional: add 6–12 tall images so pins land well.</p>
+          </div>
+        </div>
+
+        <div class="pins">
+          <!-- Replace each # with a direct Redbubble product link or an anchor on this page -->
+          <a class="pin" href="https://www.redbubble.com/i/t-shirt/This-match-is-between-me-and-God-Gamer-shirt-for-competitive-players-by-TiltedPlayer/177826677.6VDG0?asc=u" target="_blank" rel="noopener"><span>This Match Is Between Me and God</span></a>
+          <a class="pin" href="https://" target="_blank" rel="noopener"><span>Rage Quit Is My Cardio</span></a>
+          <a class="pin" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener"><span>Insert Coin, Lose Sanity</span></a>
+          <a class="pin" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener"><span>Old School Still OP</span></a>
+          <a class="pin" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blank" rel="noopener"><span>I’m Here for Fun Not the Rank</span></a>
+          <a class="pin" href="https://www.redbubble.com/people/TiltedPlayer/shop?asc=u" target="_blankhttps://www.redbubble.com/i/t-shirt/Rage-quit-is-my-cardio-Funny-gamer-shirt-by-TiltedPlayer/177767263.IJ6L0" rel="noopener"><span>Mouse. Keyboard. Dominate.</span></a>
+        </div>
+
+        <p style="margin:12px 0 0; color:var(--muted); font-size:13px;">
+          Tip: Swap the “Add product image” blocks above for real images later. This page still works as-is.
+        </p>
+      </section>
+
+      <footer>
+        <div class="links">
+          <!-- TODO: Replace with your social links -->
+          <a href="#top">Back to top ↑</a>
+          <a href="https://pin.it/73e42NUnf" target="_blank" rel="noopener">Pinterest</a>
+          <a href="https://www.tiktok.com/@tiltedplayerstore?lang=en-GB" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.instagram.com/?deoia=1" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div>Printed & shipped by Redbubble.</div>
+      </footer>
+    </main>
+  </div>
 </body>
 </html>
